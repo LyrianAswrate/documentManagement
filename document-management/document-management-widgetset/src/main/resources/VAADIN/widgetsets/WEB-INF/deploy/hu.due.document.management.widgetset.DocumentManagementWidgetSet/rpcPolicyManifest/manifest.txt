@@ -1,0 +1,2 @@
+# Module hu.due.document.management.widgetset.DocumentManagementWidgetSet
+# RPC service class, partial path of RPC policy file
