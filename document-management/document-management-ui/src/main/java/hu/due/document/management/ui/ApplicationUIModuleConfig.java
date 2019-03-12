@@ -7,17 +7,18 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.scheduling.annotation.EnableAsync;
 
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.spring.server.SpringVaadinServlet;
 
+import hu.due.document.management.service.ApplicationServiceModuleConfig;
+
 @Configuration
 @ComponentScan
-@EnableAsync
 @EnableAutoConfiguration
-//@Import({ ApplicationServiceModuleConfig.class })
+@Import({ ApplicationServiceModuleConfig.class })
 public class ApplicationUIModuleConfig {
 
 	@Bean
