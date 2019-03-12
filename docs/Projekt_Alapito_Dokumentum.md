@@ -1,7 +1,3 @@
----
-typora-root-url: ./
----
-
 # Projekt Alapító Dokumentum
 
 ## 1. Projekt alapadatai
