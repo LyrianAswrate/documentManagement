@@ -1,6 +1,7 @@
 package hu.due.document.management.service.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -9,6 +10,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+import hu.due.document.management.service.enums.AppRole;
+
 @Service
 public class ApplicationSecurityServiceImpl implements ApplicationSecurityService {
 
@@ -16,7 +19,9 @@ public class ApplicationSecurityServiceImpl implements ApplicationSecurityServic
 	protected AuthenticationManager authManager;
 
 	private boolean checkAuthorizedToUseApplication(Authentication authentication) {
-		return authentication.getAuthorities().contains(new SimpleGrantedAuthority("ADMIN"));
+		boolean authorized = authentication.getAuthorities().contains(new SimpleGrantedAuthority(AppRole.ADMIN.name()));
+		authorized |= authentication.getAuthorities().contains(new SimpleGrantedAuthority(AppRole.USER.name()));
+		return authorized;
 	}
 
 	@Override
@@ -27,7 +32,7 @@ public class ApplicationSecurityServiceImpl implements ApplicationSecurityServic
 		UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(userName, password);
 		Authentication authentication = authManager.authenticate(token);
 		if (!checkAuthorizedToUseApplication(authentication)) {
-			// throw new OperationConstraintViolatedException();
+			throw new AccessDeniedException("Hozzáférés megtagadva!");
 		}
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 	}

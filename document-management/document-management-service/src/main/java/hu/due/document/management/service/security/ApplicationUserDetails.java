@@ -1,17 +1,56 @@
 package hu.due.document.management.service.security;
 
 import java.util.Collection;
+import java.util.Collections;
 
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-public class ApplicationUserDetails extends User {
+import hu.due.document.management.dto.UserDTO;
+
+public class ApplicationUserDetails implements UserDetails {
 	private static final long serialVersionUID = 1L;
 
-	public ApplicationUserDetails(String username, String password, boolean enabled, boolean accountNonExpired,
-			boolean credentialsNonExpired, boolean accountNonLocked,
-			Collection<? extends GrantedAuthority> authorities) {
-		super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
+	private UserDTO user;
+
+	public ApplicationUserDetails(UserDTO user) {
+
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return Collections.singletonList(new SimpleGrantedAuthority(user.getRole().name()));
+	}
+
+	@Override
+	public String getPassword() {
+		return user.getPassword();
+	}
+
+	@Override
+	public String getUsername() {
+		return user.getUsername();
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return user.getEnabled();
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return user.getEnabled();
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return user.getEnabled();
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return user.getEnabled();
 	}
 
 }
