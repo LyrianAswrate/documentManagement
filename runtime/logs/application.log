@@ -39,3 +39,44 @@ Using default security password: 8ae1d479-a714-45cb-a456-6e0d8d23f4f2
 2019-03-12 19:54:56 INFO  AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
 2019-03-12 19:54:56 INFO  TomcatEmbeddedServletContainer:201 - Tomcat started on port(s): 8444 (http)
 2019-03-12 19:54:56 INFO  ApplicationLauncher:57 - Started ApplicationLauncher in 3.536 seconds (JVM running for 4.037)
+2019-03-15 21:09:04 INFO  ApplicationLauncher:50 - Starting ApplicationLauncher v0.0.1-SNAPSHOT on DESKTOP-Q486NGJ with PID 5800 (C:\Users\Gonda Gergely\git\documentManagement\runtime\document-management-web-0.0.1-SNAPSHOT.jar started by Gonda Gergely in c:\Users\Gonda Gergely\git\documentManagement\runtime)
+2019-03-15 21:09:04 INFO  ApplicationLauncher:659 - No active profile set, falling back to default profiles: default
+2019-03-15 21:09:04 INFO  AnnotationConfigServletWebServerApplicationContext:590 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1c6b6478: startup date [Fri Mar 15 21:09:04 CET 2019]; root of context hierarchy
+2019-03-15 21:09:05 WARN  ConfigurationClassPostProcessor:381 - Cannot enhance @Configuration bean definition 'com.vaadin.spring.VaadinConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2019-03-15 21:09:05 WARN  ConfigurationClassEnhancer:353 - @Bean method ApplicationUIModuleConfig.propertySourcesPlaceholderConfigurer is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2019-03-15 21:09:05 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2aa5dd74] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-15 21:09:05 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$c353a5ae] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-15 21:09:05 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-15 21:09:05 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@47542153' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-15 21:09:05 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$e8284860] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-15 21:09:06 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-15 21:09:06 WARN  AnnotationConfigServletWebServerApplicationContext:558 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is java.lang.NoSuchMethodError: org.apache.catalina.Context.addServletMappingDecoded(Ljava/lang/String;Ljava/lang/String;)V
+2019-03-15 21:09:06 INFO  ConditionEvaluationReportLoggingListener:101 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-15 21:09:06 ERROR SpringApplication:842 - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is java.lang.NoSuchMethodError: org.apache.catalina.Context.addServletMappingDecoded(Ljava/lang/String;Ljava/lang/String;)V
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:155)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:544)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:395)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1255)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1243)
+	at hu.due.document.management.web.ApplicationLauncher.main(ApplicationLauncher.java:14)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+Caused by: java.lang.NoSuchMethodError: org.apache.catalina.Context.addServletMappingDecoded(Ljava/lang/String;Ljava/lang/String;)V
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.addDefaultServlet(TomcatServletWebServerFactory.java:257)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.prepareContext(TomcatServletWebServerFactory.java:209)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:173)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:179)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:152)
+	... 16 more
