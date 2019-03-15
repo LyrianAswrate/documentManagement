@@ -1,5 +1,9 @@
 package hu.due.document.management.service.user;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,21 +19,47 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository repository;
 
+	@Autowired
+	private ModelMapper modelMapper;
+
 	@Override
 	public UserDTO getUserByUsername(String username) {
-		return mapToDTO(repository.findByUsername(username));
+		return modelMapper.map(repository.findByUsername(username), UserDTO.class);
 	}
 
-	private UserDTO mapToDTO(User user) {
-		UserDTO dto = new UserDTO();
-		dto.setId(user.getId());
-		dto.setUsername(user.getUsername());
-		dto.setPassword(user.getPassword());
-		dto.setRole(user.getRole());
-		dto.setFullname(user.getFullname());
-		dto.setEnabled(user.getEnabled());
-		dto.setEmail(user.getEmail());
-		return dto;
+	@Override
+	public List<UserDTO> getAllActiveUser() {
+		List<UserDTO> users = new ArrayList<>();
+		repository.findAll().stream().forEach(entity -> users.add(modelMapper.map(entity, UserDTO.class)));
+		return users;
+	}
+
+	@Transactional
+	@Override
+	public void deleteUser(Long userId) {
+		repository.deleteById(userId);
+	}
+
+	@Transactional
+	@Override
+	public void save(UserDTO user) {
+		User entity = null;
+		if (user.getId() == null) {
+			entity = new User();
+		} else {
+			entity = repository.getOne(user.getId());
+		}
+
+		entity.setFullname(user.getUsername());
+		entity.setFullname(user.getFullname());
+		entity.setPassword(user.getPassword());
+		entity.setRole(user.getRole());
+		entity.setEmail(user.getEmail());
+		entity.setEnabled(user.getEnabled());
+
+		if (entity.getId() == null) {
+			repository.save(entity);
+		}
 	}
 
 }
