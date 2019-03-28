@@ -1,19 +1,17 @@
 package hu.due.document.management.dto;
 
-import hu.due.document.management.service.entity.Document;
-
 public class DocumentLabelDTO extends BaseDTO {
 
 	private static final long serialVersionUID = 1L;
 
-	private Document document;
+	private DocumentDTO document;
 	private String label;
 
-	public Document getDocument() {
+	public DocumentDTO getDocument() {
 		return document;
 	}
 
-	public void setDocument(Document document) {
+	public void setDocument(DocumentDTO document) {
 		this.document = document;
 	}
 
