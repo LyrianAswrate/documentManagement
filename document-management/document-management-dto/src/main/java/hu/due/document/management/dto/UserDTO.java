@@ -1,6 +1,6 @@
 package hu.due.document.management.dto;
 
-import hu.due.document.management.service.enums.AppRole;
+import hu.due.document.management.enums.AppRole;
 
 public class UserDTO extends BaseDTO {
 

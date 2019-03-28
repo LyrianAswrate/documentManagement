@@ -3,8 +3,6 @@ package hu.due.document.management.dto;
 import java.util.Date;
 import java.util.List;
 
-import hu.due.document.management.service.entity.User;
-
 public class DocumentDTO extends BaseDTO {
 
 	private static final long serialVersionUID = 1L;
@@ -14,9 +12,9 @@ public class DocumentDTO extends BaseDTO {
 	private byte[] content;
 	private Long contentSize;
 	private String description;
-	private User createUser;
+	private UserDTO createUser;
 	private Date createDate;
-	private User modifyUser;
+	private UserDTO modifyUser;
 	private Date modifyDate;
 	private List<DocumentLabelDTO> labels;
 
@@ -60,11 +58,11 @@ public class DocumentDTO extends BaseDTO {
 		this.description = description;
 	}
 
-	public User getCreateUser() {
+	public UserDTO getCreateUser() {
 		return createUser;
 	}
 
-	public void setCreateUser(User createUser) {
+	public void setCreateUser(UserDTO createUser) {
 		this.createUser = createUser;
 	}
 
@@ -76,11 +74,11 @@ public class DocumentDTO extends BaseDTO {
 		this.createDate = createDate;
 	}
 
-	public User getModifyUser() {
+	public UserDTO getModifyUser() {
 		return modifyUser;
 	}
 
-	public void setModifyUser(User modifyUser) {
+	public void setModifyUser(UserDTO modifyUser) {
 		this.modifyUser = modifyUser;
 	}
 
@@ -90,6 +88,10 @@ public class DocumentDTO extends BaseDTO {
 
 	public void setModifyDate(Date modifyDate) {
 		this.modifyDate = modifyDate;
+	}
+
+	public List<DocumentLabelDTO> getLabels() {
+		return labels;
 	}
 
 	public void setLabels(List<DocumentLabelDTO> labels) {

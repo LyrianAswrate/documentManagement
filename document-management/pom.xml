@@ -37,6 +37,11 @@
 			</dependency>
 			<dependency>
 				<groupId>hu.due.document.management</groupId>
+				<artifactId>document-management-dto</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>hu.due.document.management</groupId>
 				<artifactId>document-management-ui</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -202,6 +207,7 @@
 
 	<modules>
 		<module>document-management-service</module>
+		<module>document-management-dto</module>
 		<module>document-management-ui</module>
 		<module>document-management-web</module>
 		<module>document-management-widgetset</module>

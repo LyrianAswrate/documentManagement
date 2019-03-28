@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import hu.due.document.management.service.enums.AppRole;
+import hu.due.document.management.enums.AppRole;
 
 @Entity
 @Table(name = "users")
