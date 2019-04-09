@@ -17,44 +17,44 @@ import hu.due.document.management.service.security.ApplicationSecurityService;
 import hu.due.document.management.ui.login.LoginUI;
 import hu.due.document.management.ui.login.view.LoginView;
 import hu.due.document.management.ui.login.view.LoginViewImpl;
+import hu.due.document.management.ui.main.MainUI;
 
 @SpringView(name = LoginPresenter.NAME, ui = LoginUI.class)
 public class LoginPresenter implements View {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public static final String NAME = "";
+    public static final String NAME = "";
 
-	@Autowired
-	private ApplicationSecurityService securityService;
+    @Autowired
+    private ApplicationSecurityService securityService;
 
-	private LoginView view;
+    private LoginView view;
 
-	@Override
-	public void enter(ViewChangeEvent event) {
-		// TODO
-	}
+    @Override
+    public void enter(ViewChangeEvent event) {
+        // nope
+    }
 
-	@Override
-	public Component getViewComponent() {
-		return view;
-	}
+    @Override
+    public Component getViewComponent() {
+        return view;
+    }
 
-	@PostConstruct
-	public void postConstruct() {
-		view = new LoginViewImpl();
-		view.buildUI();
+    @PostConstruct
+    public void postConstruct() {
+        view = new LoginViewImpl();
+        view.buildUI();
+        view.getLoginButton().addClickListener(this::onLoginAction);
+    }
 
-		view.getLoginButton().addClickListener(this::onLoginAction);
-	}
-
-	private void onLoginAction(ClickEvent event) {
-		try {
-			securityService.doLogin(view.getUsername().getValue(), view.getPassword().getValue());
-			Page.getCurrent().setLocation("/main");// TODO main definiálása kell majd
-		} catch (Exception e) {
-			Notification.show("Belépés", "Hibás felhasználói név vagy jelszó!", Type.ERROR_MESSAGE);
-		}
-	}
+    private void onLoginAction(ClickEvent event) {
+        try {
+            securityService.doLogin(view.getUsername().getValue(), view.getPassword().getValue());
+            Page.getCurrent().setLocation(MainUI.PATH);// TODO main definiálása kell majd
+        } catch (Exception e) {
+            Notification.show("Belépés", "Hibás felhasználói név vagy jelszó!", Type.ERROR_MESSAGE);
+        }
+    }
 
 }

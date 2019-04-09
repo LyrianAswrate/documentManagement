@@ -15,17 +15,19 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import hu.due.document.management.ui.login.LoginUI;
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	private AuthenticationProvider authenticationProvider;
+    @Autowired
+    private AuthenticationProvider authenticationProvider;
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		// @formatter:off
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        // @formatter:off
 		http//
 				.csrf().disable()//
 				.headers().frameOptions().sameOrigin()//
@@ -33,7 +35,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 				// Use Vaadin's CSRF protection
 
 				.exceptionHandling() //
-				.defaultAuthenticationEntryPointFor(new LoginUrlAuthenticationEntryPoint("/login"),
+				.defaultAuthenticationEntryPointFor(new LoginUrlAuthenticationEntryPoint(LoginUI.PATH),
 						new AntPathRequestMatcher("/**")) //
 				.and()//
 				//
@@ -56,7 +58,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 				.and() //
 				//
 				.logout() //
-				.logoutUrl("/logout").logoutSuccessUrl("/login") //
+				.logoutUrl("/logout").logoutSuccessUrl(LoginUI.PATH) //
 				.permitAll();
 	}
 
