@@ -23,3 +23,15 @@ Alkalmazás szerkezete (csak modulok):
 4. Az alkalmazás DB konfigurációja a ***document-management-web/src/main/resources/properties/application.properties***-ben található meg.
 5. A beimportáltak közül a "***clean***" és "***migrate***" névvel ellátottakat kell lefuttatni hogy az adatbázisba a táblák létrejöjjenek ("***flyway***").
 6. A ***clean*** törli a adatbázis tartalmat. A ***migrate*** létrehozza a sémához tartozó verzió táblát és lefuttatja a adatbázis szkripteket.
+
+**Alkalmazás elérése**
+
+Hamarosan...
+
+**Felhasználók**
+
+Az alkalmazásban új felhasználót nem lehet regisztrálni a bejelentkezés képernyőn.
+Csak az admin tud definiálni új felhasználókat miután bejelentkezett.
+
+Admin felhasználó név: **admin**
+Admin jelszó: **admin**
