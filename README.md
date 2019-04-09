@@ -34,4 +34,5 @@ Az alkalmazásban új felhasználót nem lehet regisztrálni a bejelentkezés k�
 Csak az admin tud definiálni új felhasználókat miután bejelentkezett.
 
 Admin felhasználó név: **admin**
+
 Admin jelszó: **admin**
