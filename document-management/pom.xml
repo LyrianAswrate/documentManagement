@@ -26,6 +26,7 @@
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 		<vaadin.theme>documentManagement</vaadin.theme>
 		<tomcat.version>8.5.38</tomcat.version>
+		<confirmdialog.version>3.2.0</confirmdialog.version>
 	</properties>
 
 	<dependencyManagement>
@@ -125,6 +126,12 @@
 				<groupId>com.vaadin</groupId>
 				<artifactId>vaadin-push</artifactId>
 				<version>${vaadin.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.vaadin.addon</groupId>
+				<artifactId>confirmdialog</artifactId>
+				<version>${confirmdialog.version}</version>
 			</dependency>
 
 			<dependency>
