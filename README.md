@@ -26,7 +26,7 @@ Alkalmazás szerkezete (csak modulok):
 
 **Alkalmazás elérése**
 
-Hamarosan...
+Lokális elérése az alkalmazásnak: http://localhost:8444/main
 
 **Felhasználók**
 
