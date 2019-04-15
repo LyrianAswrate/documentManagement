@@ -1,18 +1,17 @@
 package hu.due.document.management.ui.login.view;
 
 import com.vaadin.ui.Button;
-import com.vaadin.ui.HasComponents;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 
-public interface LoginView extends HasComponents {
+import hu.due.document.management.ui.component.BaseView;
 
-	public void buildUI();
+public interface LoginView extends BaseView {
 
-	public TextField getUsername();
+    public TextField getUsername();
 
-	public PasswordField getPassword();
+    public PasswordField getPassword();
 
-	public Button getLoginButton();
+    public Button getLoginButton();
 
 }

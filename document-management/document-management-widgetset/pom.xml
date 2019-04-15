@@ -16,7 +16,7 @@
 		<dependency>
 			<groupId>hu.due.document.management</groupId>
 			<artifactId>document-management-ui</artifactId>
-		</dependency>
+		</dependency> 
 	</dependencies>
 	 
 	<profiles>

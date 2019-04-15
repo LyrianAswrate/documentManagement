@@ -2,6 +2,8 @@ package hu.due.document.management.ui.login.presenter;
 
 import javax.annotation.PostConstruct;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.vaadin.navigator.View;
@@ -21,6 +23,8 @@ import hu.due.document.management.ui.main.MainUI;
 
 @SpringView(name = LoginPresenter.NAME, ui = LoginUI.class)
 public class LoginPresenter implements View {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(LoginPresenter.class);
 
     private static final long serialVersionUID = 1L;
 
@@ -51,8 +55,9 @@ public class LoginPresenter implements View {
     private void onLoginAction(ClickEvent event) {
         try {
             securityService.doLogin(view.getUsername().getValue(), view.getPassword().getValue());
-            Page.getCurrent().setLocation(MainUI.PATH);// TODO main definiálása kell majd
+            Page.getCurrent().setLocation(MainUI.PATH);
         } catch (Exception e) {
+            LoginPresenter.LOGGER.error(e.getMessage(), e);
             Notification.show("Belépés", "Hibás felhasználói név vagy jelszó!", Type.ERROR_MESSAGE);
         }
     }

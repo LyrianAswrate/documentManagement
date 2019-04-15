@@ -89,6 +89,11 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.vaadin.addon</groupId>
+			<artifactId>confirmdialog</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-themes</artifactId>
 		</dependency>
