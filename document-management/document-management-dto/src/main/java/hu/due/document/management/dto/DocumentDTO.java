@@ -16,7 +16,7 @@ public class DocumentDTO extends BaseDTO {
 	private Date createDate;
 	private UserDTO modifyUser;
 	private Date modifyDate;
-	private List<DocumentLabelDTO> labels;
+	private List<LabelDTO> labels;
 
 	public String getRegnumber() {
 		return regnumber;
@@ -90,11 +90,11 @@ public class DocumentDTO extends BaseDTO {
 		this.modifyDate = modifyDate;
 	}
 
-	public List<DocumentLabelDTO> getLabels() {
+	public List<LabelDTO> getLabels() {
 		return labels;
 	}
 
-	public void setLabels(List<DocumentLabelDTO> labels) {
+	public void setLabels(List<LabelDTO> labels) {
 		this.labels = labels;
 	}
 
