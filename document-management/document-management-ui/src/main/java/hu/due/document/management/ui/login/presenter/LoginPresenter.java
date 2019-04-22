@@ -6,6 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.vaadin.event.ShortcutAction.KeyCode;
+import com.vaadin.event.ShortcutListener;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.Page;
@@ -50,6 +52,18 @@ public class LoginPresenter implements View {
         view = new LoginViewImpl();
         view.buildUI();
         view.getLoginButton().addClickListener(this::onLoginAction);
+
+        ShortcutListener listener = new ShortcutListener("", KeyCode.ENTER, null) {
+            private static final long serialVersionUID = 1L;
+
+            @Override
+            public void handleAction(Object sender, Object target) {
+                onLoginAction(null);
+            }
+        };
+
+        view.getUsername().addShortcutListener(listener);
+        view.getPassword().addShortcutListener(listener);
     }
 
     private void onLoginAction(ClickEvent event) {

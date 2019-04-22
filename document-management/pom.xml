@@ -24,6 +24,7 @@
 		<javax.servlet.jsp.version>2.3.1</javax.servlet.jsp.version>
 		<vaadin.spring.version>1.0.2</vaadin.spring.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
+		<vaadin.pagination.version>8.0.6</vaadin.pagination.version>
 		<vaadin.theme>documentManagement</vaadin.theme>
 		<tomcat.version>8.5.38</tomcat.version>
 		<confirmdialog.version>3.2.0</confirmdialog.version>
@@ -132,6 +133,12 @@
 				<groupId>org.vaadin.addon</groupId>
 				<artifactId>confirmdialog</artifactId>
 				<version>${confirmdialog.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.vaadin.addon</groupId>
+				<artifactId>pagination</artifactId>
+				<version>${vaadin.pagination.version}</version>
 			</dependency>
 
 			<dependency>
