@@ -15,21 +15,21 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class ApplicationSecurityServiceConfig {
 
-	@Autowired
-	@Qualifier("applicationUserDetailsService")
-	private UserDetailsService userDetailsService;
+    @Autowired
+    @Qualifier("applicationUserDetailsService")
+    private UserDetailsService userDetailsService;
 
-	@Bean
-	public AuthenticationProvider authenticationProvider() throws NoSuchAlgorithmException {
-		DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-		authProvider.setUserDetailsService(userDetailsService);
-		authProvider.setPasswordEncoder(encoder());
-		return authProvider;
-	}
+    @Bean
+    public AuthenticationProvider authenticationProvider() throws NoSuchAlgorithmException {
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(userDetailsService);
+        authProvider.setPasswordEncoder(encoder());
+        return authProvider;
+    }
 
-	@Bean
-	public PasswordEncoder encoder() {
-		return new BCryptPasswordEncoder(16);
-	}
+    @Bean
+    public PasswordEncoder encoder() {
+        return new BCryptPasswordEncoder(8);
+    }
 
 }

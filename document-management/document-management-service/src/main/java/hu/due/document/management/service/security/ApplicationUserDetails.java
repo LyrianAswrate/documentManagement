@@ -1,9 +1,8 @@
 package hu.due.document.management.service.security;
 
-import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -19,7 +18,7 @@ public class ApplicationUserDetails implements UserDetails {
     }
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
+    public List<SimpleGrantedAuthority> getAuthorities() {
         return Collections.singletonList(new SimpleGrantedAuthority(user.getRole().name()));
     }
 
@@ -51,6 +50,10 @@ public class ApplicationUserDetails implements UserDetails {
     @Override
     public boolean isEnabled() {
         return user.getEnabled();
+    }
+
+    public UserDTO getUser() {
+        return user;
     }
 
 }
