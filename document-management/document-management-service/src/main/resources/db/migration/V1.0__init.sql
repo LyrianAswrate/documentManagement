@@ -23,9 +23,15 @@ CREATE TABLE documents(
     PRIMARY KEY (id)
 );
 
-CREATE TABLE doclabels(
+CREATE TABLE document_label_xrefs(
 	id BIGINT NOT NULL AUTO_INCREMENT,
     document_id BIGINT NOT NULL REFERENCES documents(id),
+    label_id BIGINT NOT NULL REFERENCES labels(id),
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE labels(
+	id BIGINT NOT NULL AUTO_INCREMENT, 
     label VARCHAR(255) NOT NULL,
 	PRIMARY KEY (id)
 );
