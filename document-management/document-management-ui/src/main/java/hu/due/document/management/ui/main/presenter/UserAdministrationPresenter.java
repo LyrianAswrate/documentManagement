@@ -98,12 +98,12 @@ public class UserAdministrationPresenter implements View {
 
     private void onEditUserClicked() {
         UI.getCurrent().getSession().setAttribute("userId", view.getUserGrid().getSelectionModel().getFirstSelectedItem().get().getId());
-        UI.getCurrent().getNavigator().navigateTo(UserEditoPresenter.NAME);
+        UI.getCurrent().getNavigator().navigateTo(UserEditorPresenter.NAME);
     }
 
     private void onNewUserClicked() {
         UI.getCurrent().getSession().setAttribute("userId", null);
-        UI.getCurrent().getNavigator().navigateTo(UserEditoPresenter.NAME);
+        UI.getCurrent().getNavigator().navigateTo(UserEditorPresenter.NAME);
     }
 
     private CustomePageDTO<UserDTO> findAll(int page, int size) {

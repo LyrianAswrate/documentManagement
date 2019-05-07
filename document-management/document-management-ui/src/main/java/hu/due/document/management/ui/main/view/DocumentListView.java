@@ -2,6 +2,7 @@ package hu.due.document.management.ui.main.view;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
+import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
 import hu.due.document.management.dto.DocumentDTO;
@@ -18,5 +19,9 @@ public interface DocumentListView extends BaseView {
     public Button getBtnEditDocument();
 
     public Button getBtnNewDocument();
+
+    public Button getBtnSearch();
+
+    public TextField getSerachField();
 
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import hu.due.document.management.dto.CustomePageDTO;
 import hu.due.document.management.dto.DocumentDTO;
@@ -14,6 +15,7 @@ import hu.due.document.management.service.entity.Document;
 import hu.due.document.management.service.repository.DocumentRepository;
 
 @Service
+@Transactional(readOnly = true)
 public class DocumentServiceImpl implements DocumentService {
 
     @Autowired
@@ -50,20 +52,27 @@ public class DocumentServiceImpl implements DocumentService {
         return document;
     }
 
+    @Transactional
     @Override
     public void deleteDocumentById(Long documentId) {
         repository.deleteById(documentId);
     }
 
+    @Transactional
     @Override
     public void save(DocumentDTO document) {
-        // TODO Auto-generated method stub
+        Document entity = null;
 
     }
 
     @Override
     public CustomePageDTO<DocumentDTO> search(String filter, Pageable pageable) {
-        Page<Document> page = repository.findAllByFilterWithFetch(filter, pageable);
+        Page<Document> page = null;
+        if ((filter != null) && !filter.trim().isEmpty()) {
+            page = repository.findAllByFilterWithFetch(filter, pageable);
+        } else {
+            page = repository.findAllWithFetch(pageable);
+        }
         CustomePageDTO<DocumentDTO> customePage = new CustomePageDTO<>();
         customePage.setContent(page.getContent().stream().map(map -> modelMapper.map(map, DocumentDTO.class)).collect(Collectors.toList()));
         customePage.setTotalElements(page.getTotalElements());
@@ -72,7 +81,12 @@ public class DocumentServiceImpl implements DocumentService {
 
     @Override
     public CustomePageDTO<DocumentDTO> search(String filter, Long userId, Pageable pageable) {
-        Page<Document> page = repository.findAllByCreateUserAndFilterWithFetch(filter, userId, pageable);
+        Page<Document> page = null;
+        if ((filter != null) && !filter.trim().isEmpty()) {
+            page = repository.findAllByCreateUserAndFilterWithFetch(filter, userId, pageable);
+        } else {
+            page = repository.findAllByCreateUserWithFetch(userId, pageable);
+        }
         CustomePageDTO<DocumentDTO> customePage = new CustomePageDTO<>();
         customePage.setContent(page.getContent().stream().map(map -> modelMapper.map(map, DocumentDTO.class)).collect(Collectors.toList()));
         customePage.setTotalElements(page.getTotalElements());
