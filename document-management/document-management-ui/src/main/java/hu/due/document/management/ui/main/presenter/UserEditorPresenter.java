@@ -21,8 +21,8 @@ import hu.due.document.management.ui.main.MainUI;
 import hu.due.document.management.ui.main.view.UserProfileView;
 import hu.due.document.management.ui.main.view.UserProfileViewImpl;
 
-@SpringView(name = UserEditoPresenter.NAME, ui = MainUI.class)
-public class UserEditoPresenter implements View {
+@SpringView(name = UserEditorPresenter.NAME, ui = MainUI.class)
+public class UserEditorPresenter implements View {
 
     private static final long serialVersionUID = 1L;
 

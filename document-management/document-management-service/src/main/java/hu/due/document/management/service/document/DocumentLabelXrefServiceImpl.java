@@ -6,10 +6,12 @@ import java.util.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import hu.due.document.management.dto.LabelDTO;
 import hu.due.document.management.service.repository.DocumentLabelXrefRepository;
 
+@Transactional(readOnly = true)
 @Service
 public class DocumentLabelXrefServiceImpl implements DocumentLabelXrefService {
 

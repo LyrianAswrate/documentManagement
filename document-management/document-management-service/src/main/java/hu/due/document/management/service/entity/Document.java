@@ -3,6 +3,7 @@ package hu.due.document.management.service.entity;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,6 +31,7 @@ public class Document {
     @Column(nullable = false, length = 255)
     private String filename;
 
+    @Basic(fetch = FetchType.LAZY)
     @Column(nullable = false)
     private byte[] content;
 
