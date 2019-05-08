@@ -107,11 +107,11 @@ public class DocumentListViewImpl extends CustomComponent implements DocumentLis
     }
 
     private String getCreateDateAsString(DocumentDTO document) {
-        return new SimpleDateFormat("yyyy.MM.dd. HH:mm:ss").format(document.getCreateDate());
+        return new SimpleDateFormat("yyyy.MM.dd.").format(document.getCreateDate());
     }
 
     private String getModifyDateAsString(DocumentDTO document) {
-        return document.getModifyDate() != null ? new SimpleDateFormat("yyyy.MM.dd. HH:mm:ss").format(document.getModifyDate()) : "";
+        return document.getModifyDate() != null ? new SimpleDateFormat("yyyy.MM.dd.").format(document.getModifyDate()) : "";
     }
 
     private String getContentSizeAsString(DocumentDTO document) {
