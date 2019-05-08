@@ -1636,6 +1636,12 @@ div.v-layout.v-horizontal.v-widget {
 	font-weight: bold !important;
 }
 
+.documentManagement .component-wrap {
+	width: 100%;
+	text-align: center !important;
+	vertical-align: inherit !important;
+}
+
 .documentManagement.v-app, .documentManagement.v-app-loading {
 	font: 300 16px/1.55 "Open Sans", sans-serif;
 	color: #464646;

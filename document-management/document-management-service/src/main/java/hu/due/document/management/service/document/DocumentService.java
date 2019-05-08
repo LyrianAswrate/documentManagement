@@ -21,4 +21,6 @@ public interface DocumentService {
 
     public CustomePageDTO<DocumentDTO> search(String filter, Long userId, Pageable pageable);
 
+    public byte[] getDocumentContent(Long documentId);
+
 }

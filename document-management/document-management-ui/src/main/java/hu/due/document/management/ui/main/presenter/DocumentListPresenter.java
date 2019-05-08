@@ -1,5 +1,7 @@
 package hu.due.document.management.ui.main.presenter;
 
+import java.io.ByteArrayInputStream;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +16,16 @@ import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.event.ShortcutListener;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.server.FileDownloader;
+import com.vaadin.server.StreamResource;
 import com.vaadin.spring.annotation.SpringView;
+import com.vaadin.ui.Button;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.Grid.SelectionMode;
+import com.vaadin.ui.Notification;
+import com.vaadin.ui.Notification.Type;
 import com.vaadin.ui.UI;
+import com.vaadin.ui.themes.ValoTheme;
 
 import hu.due.document.management.dto.CustomePageDTO;
 import hu.due.document.management.dto.DocumentDTO;
@@ -59,6 +67,8 @@ public class DocumentListPresenter implements View {
         view = new DocumentListViewImpl();
         view.buildUI();
 
+        view.getDocumentGrid().addComponentColumn(this::buildDownloadButton).setResizable(false).setSortable(false);
+
         pagination = createPagination(findAll("", 0, 10).getTotalElements(), 1, 10);
         pagination.setItemsPerPageVisible(false);
         pagination.setItemsPerPageEnabled(false);
@@ -93,6 +103,30 @@ public class DocumentListPresenter implements View {
         view.getBtnNewDocument().addClickListener(event -> onNewDocumentClicked());
         view.getBtnEditDocument().addClickListener(event -> onEditDocumentClicked());
         view.getBtnDeleteDocument().addClickListener(event -> onDeleteDocumentClicked());
+    }
+
+    private Button buildDownloadButton(DocumentDTO document) {
+        Button downloadButton = new Button("Letőltés");
+        downloadButton.addStyleName(ValoTheme.BUTTON_PRIMARY);
+        downloadButton.addStyleName(ValoTheme.BUTTON_SMALL);
+
+        StreamResource myResource = createResource(document);
+        FileDownloader fileDownloader = new FileDownloader(myResource);
+        fileDownloader.extend(downloadButton);
+        return downloadButton;
+    }
+
+    private StreamResource createResource(DocumentDTO document) {
+        return new StreamResource(() -> {
+            ByteArrayInputStream bais = null;
+            try {
+                bais = new ByteArrayInputStream(documentService.getDocumentContent(document.getId()));
+            } catch (Exception e) {
+                Notification.show("Fájl letöltése nem sikerült!", Type.ERROR_MESSAGE);
+            }
+            return bais;
+        }, document.getFilename());
+
     }
 
     private void onSearchClicked() {

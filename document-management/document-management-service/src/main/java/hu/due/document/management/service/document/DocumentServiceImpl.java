@@ -118,4 +118,9 @@ public class DocumentServiceImpl implements DocumentService {
         return customePage;
     }
 
+    @Override
+    public byte[] getDocumentContent(Long documentId) {
+        return repository.getOne(documentId).getContent();
+    }
+
 }
