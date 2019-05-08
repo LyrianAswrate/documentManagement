@@ -2,6 +2,9 @@ package hu.due.document.management.ui.main.presenter;
 
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 
 import javax.annotation.PostConstruct;
 
@@ -96,12 +99,13 @@ public class DocumentEditorPresenter implements View, Receiver, SucceededListene
                 valid = false;
                 sb.append("A dokumentum mérete 0! \n");
             } else {
-                document.setContent(content);
+                document.setFileContent(content);
                 document.setContentSize((long) content.length);
             }
         }
 
         document.setDescription(view.getTaDescription().getValue());
+        document.setFilename(view.getTfFileName().getValue());
 
         // TODO labels!
 
@@ -114,8 +118,47 @@ public class DocumentEditorPresenter implements View, Receiver, SucceededListene
         }
     }
 
+    private LocalDate convertToLocalDateViaInstant(Date dateToConvert) {
+        return dateToConvert.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+    }
+
     private void loadDocumentData() {
-        // TODO
+        view.getTfRegnumber().setReadOnly(false);
+
+        view.getTfRegnumber().setValue("");
+        view.getTaDescription().setValue("");
+        view.getTfCreateUser().setValue("");
+        view.getDfCreateDate().setValue(null);
+        view.getTfModifyUser().setValue("");
+        view.getDfModifyDate().setValue(null);
+
+        view.getUploadComponent().setVisible(true);
+        view.getTfCreateUser().setVisible(false);
+        view.getDfCreateDate().setVisible(false);
+        view.getTfModifyUser().setVisible(false);
+        view.getDfModifyDate().setVisible(false);
+
+        if (document.getId() != null) {
+            view.getUploadComponent().setVisible(false);
+            view.getTfCreateUser().setVisible(true);
+            view.getDfCreateDate().setVisible(true);
+            view.getTfModifyUser().setVisible(true);
+            view.getDfModifyDate().setVisible(true);
+
+            view.getTfRegnumber().setValue(document.getRegnumber());
+            view.getTaDescription().setValue(document.getDescription());
+            view.getTfCreateUser().setValue(document.getCreateUser().getFullname());
+            view.getDfCreateDate().setValue(convertToLocalDateViaInstant(document.getCreateDate()));
+            view.getTfModifyUser().setValue(document.getModifyUser().getFullname());
+            view.getDfModifyDate().setValue(convertToLocalDateViaInstant(document.getModifyDate()));
+
+            view.getTfRegnumber().setReadOnly(true);
+            view.getTfCreateUser().setReadOnly(true);
+            view.getDfCreateDate().setReadOnly(true);
+            view.getTfModifyUser().setReadOnly(true);
+            view.getDfModifyDate().setReadOnly(true);
+
+        }
     }
 
     @Override

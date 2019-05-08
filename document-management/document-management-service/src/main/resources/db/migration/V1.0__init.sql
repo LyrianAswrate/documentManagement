@@ -13,7 +13,7 @@ CREATE TABLE documents(
 	id BIGINT NOT NULL AUTO_INCREMENT,
     regnumber VARCHAR(20) NOT NULL,
     filename VARCHAR(255) NOT NULL,
-    content BLOB NOT NULL,
+    content LONGBLOB NOT NULL,
     content_size BIGINT NOT NULL,
     description TEXT,
     create_user_id BIGINT NOT NULL REFERENCES users(id),

@@ -1,11 +1,13 @@
 package hu.due.document.management.service.document;
 
+import java.util.Date;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +15,8 @@ import hu.due.document.management.dto.CustomePageDTO;
 import hu.due.document.management.dto.DocumentDTO;
 import hu.due.document.management.service.entity.Document;
 import hu.due.document.management.service.repository.DocumentRepository;
+import hu.due.document.management.service.repository.UserRepository;
+import hu.due.document.management.service.security.ApplicationUserDetails;
 
 @Service
 @Transactional(readOnly = true)
@@ -20,6 +24,9 @@ public class DocumentServiceImpl implements DocumentService {
 
     @Autowired
     private DocumentRepository repository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
     private DocumentLabelXrefService documentLabelXrefService;
@@ -55,14 +62,32 @@ public class DocumentServiceImpl implements DocumentService {
     @Transactional
     @Override
     public void deleteDocumentById(Long documentId) {
-        repository.deleteById(documentId);
+        repository.deleteByDocumentId(documentId);
     }
 
     @Transactional
     @Override
     public void save(DocumentDTO document) {
+        Long callerUserId = ((ApplicationUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUser()
+                .getId();
         Document entity = null;
-
+        if (document.getId() == null) {
+            entity = new Document();
+            entity.setRegnumber(document.getRegnumber());
+            entity.setDescription(document.getDescription());
+            entity.setContent(document.getFileContent());
+            entity.setContentSize(document.getContentSize());
+            entity.setCreateUser(userRepository.getOne(callerUserId));
+            entity.setCreateDate(new Date());
+            entity.setFilename(document.getFilename());
+            repository.save(entity);
+        } else {
+            entity = repository.getOne(document.getId());
+            entity.setRegnumber(document.getRegnumber());
+            entity.setDescription(document.getDescription());
+            entity.setModifyUser(userRepository.getOne(callerUserId));
+            entity.setModifyDate(new Date());
+        }
     }
 
     @Override

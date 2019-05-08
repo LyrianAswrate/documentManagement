@@ -68,9 +68,7 @@ public class DocumentListPresenter implements View {
         view.getRoot().addComponent(pagination);
         view.getDocumentGrid().setSelectionMode(SelectionMode.SINGLE);
         view.getDocumentGrid().addSelectionListener(event -> {
-            if (event.getFirstSelectedItem().isPresent()
-                    && (((ApplicationUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUser().getId()
-                            .longValue() != event.getFirstSelectedItem().get().getId().longValue())) {
+            if (event.getFirstSelectedItem().isPresent()) {
                 view.getBtnEditDocument().setEnabled(true);
                 view.getBtnDeleteDocument().setEnabled(true);
             } else {
@@ -103,7 +101,7 @@ public class DocumentListPresenter implements View {
     }
 
     private void onDeleteDocumentClicked() {
-        ConfirmDialog.show(UI.getCurrent(), "Felhasználó törlése", "Biztos hogy szeretné töröli a felhasználót?", "Igen", "Mégsem",
+        ConfirmDialog.show(UI.getCurrent(), "Dokumentum törlése", "Biztos hogy szeretné töröli a dokumentumot?", "Igen", "Mégsem",
                 () -> onDeleteConfirmedClicked());
     }
 

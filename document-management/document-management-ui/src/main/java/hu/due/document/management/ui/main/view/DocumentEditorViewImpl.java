@@ -24,6 +24,7 @@ public class DocumentEditorViewImpl extends CustomComponent implements DocumentE
 
     private TextField tfRegnumber;
     private TextArea taDescription;
+    private HorizontalLayout uploadComponent;
     private TextField tfFileName;
     private Upload upload;
     private TextField tfContentSize;
@@ -72,7 +73,7 @@ public class DocumentEditorViewImpl extends CustomComponent implements DocumentE
 
         upload = new Upload(null, uplodaReceiver);
 
-        HorizontalLayout uploadComponent = new HorizontalLayout();
+        uploadComponent = new HorizontalLayout();
 
         uploadComponent.addComponent(tfFileName);
         uploadComponent.addComponent(upload);
@@ -128,6 +129,11 @@ public class DocumentEditorViewImpl extends CustomComponent implements DocumentE
     @Override
     public TextField getTfFileName() {
         return tfFileName;
+    }
+
+    @Override
+    public HorizontalLayout getUploadComponent() {
+        return uploadComponent;
     }
 
     @Override

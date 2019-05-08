@@ -1,5 +1,8 @@
 package hu.due.document.management.ui.main.view;
 
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.shared.ui.ContentMode;
 import com.vaadin.ui.Alignment;
@@ -85,15 +88,60 @@ public class DocumentListViewImpl extends CustomComponent implements DocumentLis
     private Grid<DocumentDTO> buildGrid() {
         Grid<DocumentDTO> grid = new Grid<>();
         grid.setSizeFull();
-        grid.addColumn(DocumentDTO::getRegnumber).setCaption("Iktatószám").setSortable(false).setResizable(false);
-        grid.addColumn(DocumentDTO::getFilename).setCaption("Fájl neve").setSortable(false).setResizable(false);
-        grid.addColumn(DocumentDTO::getDescription).setCaption("Leírás").setSortable(false).setResizable(false);
-        grid.addColumn(DocumentDTO::getContentSize).setCaption("Méret").setSortable(false).setResizable(false);
-        grid.addColumn(DocumentDTO::getCreateUser).setCaption("Feltöltő").setSortable(false).setResizable(false);
-        grid.addColumn(DocumentDTO::getCreateDate).setCaption("Feltöltve").setSortable(false).setResizable(false);
-        grid.addColumn(DocumentDTO::getModifyUser).setCaption("Módosító").setSortable(false).setResizable(false);
-        grid.addColumn(DocumentDTO::getModifyDate).setCaption("Módosítva").setSortable(false).setResizable(false);
+        grid.addColumn(DocumentDTO::getRegnumber).setCaption("Iktatószám").setSortable(false).setMinimumWidth(150.0d);
+        grid.addColumn(DocumentDTO::getFilename).setCaption("Fájl neve").setSortable(false).setMinimumWidth(250.0d).setMaximumWidth(250.0d);
+        grid.addColumn(this::getContentSizeAsString).setCaption("Méret").setSortable(false).setMinimumWidth(250.0d);
+        grid.addColumn(this::getCreateUserName).setCaption("Feltöltő").setSortable(false).setMinimumWidth(150.0d);
+        grid.addColumn(this::getCreateDateAsString).setCaption("Feltöltve").setSortable(false).setMinimumWidth(150.0d);
+        grid.addColumn(this::getModifyUserName).setCaption("Módosító").setSortable(false).setMinimumWidth(150.0d);
+        grid.addColumn(this::getModifyDateAsString).setCaption("Módosítva").setSortable(false).setMinimumWidth(150.0d);
         return grid;
+    }
+
+    private String getModifyUserName(DocumentDTO document) {
+        return document.getModifyUser() != null ? document.getModifyUser().getFullname() : "";
+    }
+
+    private String getCreateUserName(DocumentDTO document) {
+        return document.getCreateUser().getFullname();
+    }
+
+    private String getCreateDateAsString(DocumentDTO document) {
+        return new SimpleDateFormat("yyyy.MM.dd. HH:mm:ss").format(document.getCreateDate());
+    }
+
+    private String getModifyDateAsString(DocumentDTO document) {
+        return document.getModifyDate() != null ? new SimpleDateFormat("yyyy.MM.dd. HH:mm:ss").format(document.getModifyDate()) : "";
+    }
+
+    private String getContentSizeAsString(DocumentDTO document) {
+        return formatFileSize(document.getContentSize());
+    }
+
+    public static String formatFileSize(long size) {
+        String hrSize = null;
+
+        double b = size;
+        double k = size / 1024.0;
+        double m = ((size / 1024.0) / 1024.0);
+        double g = (((size / 1024.0) / 1024.0) / 1024.0);
+        double t = ((((size / 1024.0) / 1024.0) / 1024.0) / 1024.0);
+
+        DecimalFormat dec = new DecimalFormat("0.00");
+
+        if (t > 1) {
+            hrSize = dec.format(t).concat(" TB");
+        } else if (g > 1) {
+            hrSize = dec.format(g).concat(" GB");
+        } else if (m > 1) {
+            hrSize = dec.format(m).concat(" MB");
+        } else if (k > 1) {
+            hrSize = dec.format(k).concat(" KB");
+        } else {
+            hrSize = dec.format(b).concat(" Bytes");
+        }
+
+        return hrSize;
     }
 
     private VerticalLayout createContent(Component... component) {
