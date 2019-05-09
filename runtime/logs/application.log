@@ -80,3 +80,195 @@ Caused by: java.lang.NoSuchMethodError: org.apache.catalina.Context.addServletMa
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:179)
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:152)
 	... 16 more
+2019-05-09 18:29:25 INFO  ApplicationLauncher:50 - Starting ApplicationLauncher v0.0.1-SNAPSHOT on DESKTOP-Q486NGJ with PID 13768 (C:\Users\Gonda Gergely\git\documentManagement\runtime\document-management-web-0.0.1-SNAPSHOT.jar started by Gonda Gergely in c:\Users\Gonda Gergely\git\documentManagement\runtime)
+2019-05-09 18:29:25 INFO  ApplicationLauncher:659 - No active profile set, falling back to default profiles: default
+2019-05-09 18:29:25 INFO  AnnotationConfigServletWebServerApplicationContext:590 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5577140b: startup date [Thu May 09 18:29:25 CEST 2019]; root of context hierarchy
+2019-05-09 18:29:26 WARN  ConfigurationClassPostProcessor:381 - Cannot enhance @Configuration bean definition 'com.vaadin.spring.VaadinConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2019-05-09 18:29:26 WARN  ConfigurationClassEnhancer:353 - @Bean method ApplicationUIModuleConfig.propertySourcesPlaceholderConfigurer is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2019-05-09 18:29:27 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$dcc40983] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:29:27 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$7571d1bd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:29:27 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:29:27 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@35ef1869' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:29:27 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$9a46746f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:29:27 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:29:27 INFO  TomcatWebServer:91 - Tomcat initialized with port(s): 8444 (http)
+2019-05-09 18:29:27 INFO  ContextLoader:285 - Root WebApplicationContext: initialization completed in 1881 ms
+2019-05-09 18:29:27 INFO  VaadinServletConfiguration:261 - Registering Vaadin servlet
+2019-05-09 18:29:27 INFO  VaadinServletConfiguration:263 - Servlet will be mapped to URLs [/vaadinServlet/*, /VAADIN/*]
+2019-05-09 18:29:27 INFO  VaadinServletConfiguration:282 - Setting servlet init parameters
+2019-05-09 18:29:27 INFO  VaadinServletConfiguration:306 - Set servlet init parameter [productionMode] = [false]
+2019-05-09 18:29:27 INFO  VaadinServletConfiguration:306 - Set servlet init parameter [resourceCacheTime] = [3600]
+2019-05-09 18:29:27 INFO  VaadinServletConfiguration:306 - Set servlet init parameter [heartbeatInterval] = [300]
+2019-05-09 18:29:27 INFO  VaadinServletConfiguration:306 - Set servlet init parameter [closeIdleSessions] = [false]
+2019-05-09 18:29:27 INFO  FilterRegistrationBean:244 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-05-09 18:29:27 INFO  FilterRegistrationBean:244 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-05-09 18:29:27 INFO  FilterRegistrationBean:244 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-05-09 18:29:27 INFO  FilterRegistrationBean:244 - Mapping filter: 'requestContextFilter' to: [/*]
+2019-05-09 18:29:27 INFO  DelegatingFilterProxyRegistrationBean:244 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-05-09 18:29:27 INFO  ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2019-05-09 18:29:27 INFO  ServletRegistrationBean:185 - Servlet springVaadinServlet mapped to [/vaadinServlet/*, /VAADIN/*]
+2019-05-09 18:29:28 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2019-05-09 18:29:28 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2019-05-09 18:29:28 INFO  LocalContainerEntityManagerFactoryBean:361 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-05-09 18:29:28 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-05-09 18:29:28 INFO  Version:45 - HHH000412: Hibernate Core {5.2.16.Final}
+2019-05-09 18:29:28 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-05-09 18:29:28 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-05-09 18:29:28 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-05-09 18:29:29 INFO  LocalContainerEntityManagerFactoryBean:415 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-05-09 18:29:29 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-05-09 18:29:30 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/css/*'], []
+2019-05-09 18:29:30 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3e74829, org.springframework.security.web.context.SecurityContextPersistenceFilter@7cbd9d24, org.springframework.security.web.header.HeaderWriterFilter@5c45d770, org.springframework.security.web.authentication.logout.LogoutFilter@4416d64f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5026735c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@10f7f7de, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4f6f416f, org.springframework.security.web.session.SessionManagementFilter@1bae316d, org.springframework.security.web.access.ExceptionTranslationFilter@45d2ade3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@258d79be]
+2019-05-09 18:29:30 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-09 18:29:30 INFO  RequestMappingHandlerAdapter:574 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5577140b: startup date [Thu May 09 18:29:25 CEST 2019]; root of context hierarchy
+2019-05-09 18:29:30 WARN  JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration:235 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-05-09 18:29:30 INFO  RequestMappingHandlerMapping:547 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-05-09 18:29:30 INFO  RequestMappingHandlerMapping:547 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-05-09 18:29:30 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-09 18:29:30 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-09 18:29:30 INFO  VaadinServletConfiguration:121 - Checking the application context for Vaadin UI mappings
+2019-05-09 18:29:30 INFO  VaadinServletConfiguration:206 - Registering Vaadin servlet of type [com.vaadin.spring.server.SpringVaadinServlet]
+2019-05-09 18:29:30 INFO  VaadinServletConfiguration:110 - Forwarding @SpringUI URLs from {/main=org.springframework.web.servlet.mvc.ServletForwardingController@335b5620, /login=org.springframework.web.servlet.mvc.ServletForwardingController@335b5620, /main/=org.springframework.web.servlet.mvc.ServletForwardingController@335b5620, /login/=org.springframework.web.servlet.mvc.ServletForwardingController@335b5620}
+2019-05-09 18:29:30 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/main] onto handler of type [class org.springframework.web.servlet.mvc.ServletForwardingController]
+2019-05-09 18:29:30 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ServletForwardingController]
+2019-05-09 18:29:30 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/main/] onto handler of type [class org.springframework.web.servlet.mvc.ServletForwardingController]
+2019-05-09 18:29:30 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/login/] onto handler of type [class org.springframework.web.servlet.mvc.ServletForwardingController]
+2019-05-09 18:29:31 INFO  AnnotationMBeanExporter:433 - Registering beans for JMX exposure on startup
+2019-05-09 18:29:31 INFO  AnnotationMBeanExporter:895 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-05-09 18:29:31 INFO  AnnotationMBeanExporter:668 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-05-09 18:29:31 INFO  TomcatWebServer:206 - Tomcat started on port(s): 8444 (http) with context path ''
+2019-05-09 18:29:31 INFO  ApplicationLauncher:59 - Started ApplicationLauncher in 5.661 seconds (JVM running for 6.11)
+2019-05-09 18:29:34 INFO  AnnotationConfigServletWebServerApplicationContext:993 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5577140b: startup date [Thu May 09 18:29:25 CEST 2019]; root of context hierarchy
+2019-05-09 18:29:34 INFO  AnnotationMBeanExporter:451 - Unregistering JMX-exposed beans on shutdown
+2019-05-09 18:29:34 INFO  AnnotationMBeanExporter:183 - Unregistering JMX-exposed beans
+2019-05-09 18:29:34 INFO  LocalContainerEntityManagerFactoryBean:597 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-05-09 18:29:34 INFO  HikariDataSource:381 - HikariPool-1 - Shutdown initiated...
+2019-05-09 18:29:34 INFO  HikariDataSource:383 - HikariPool-1 - Shutdown completed.
+2019-05-09 18:33:58 INFO  ApplicationLauncher:50 - Starting ApplicationLauncher v0.0.1-SNAPSHOT on DESKTOP-Q486NGJ with PID 8820 (C:\Users\Gonda Gergely\git\documentManagement\runtime\document-management-web-0.0.1-SNAPSHOT.jar started by Gonda Gergely in c:\Users\Gonda Gergely\git\documentManagement\runtime)
+2019-05-09 18:33:58 INFO  ApplicationLauncher:659 - No active profile set, falling back to default profiles: default
+2019-05-09 18:33:58 INFO  AnnotationConfigServletWebServerApplicationContext:590 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4fccd51b: startup date [Thu May 09 18:33:58 CEST 2019]; root of context hierarchy
+2019-05-09 18:33:59 WARN  ConfigurationClassPostProcessor:381 - Cannot enhance @Configuration bean definition 'com.vaadin.spring.VaadinConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2019-05-09 18:33:59 WARN  ConfigurationClassEnhancer:353 - @Bean method ApplicationUIModuleConfig.propertySourcesPlaceholderConfigurer is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2019-05-09 18:33:59 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b0caf723] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:33:59 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$4978bf5d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:33:59 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:33:59 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@192d43ce' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:33:59 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$6e4d620f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:33:59 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:33:59 INFO  TomcatWebServer:91 - Tomcat initialized with port(s): 8444 (http)
+2019-05-09 18:33:59 INFO  ContextLoader:285 - Root WebApplicationContext: initialization completed in 1764 ms
+2019-05-09 18:34:00 INFO  VaadinServletConfiguration:261 - Registering Vaadin servlet
+2019-05-09 18:34:00 INFO  VaadinServletConfiguration:263 - Servlet will be mapped to URLs [/vaadinServlet/*, /VAADIN/*]
+2019-05-09 18:34:00 INFO  VaadinServletConfiguration:282 - Setting servlet init parameters
+2019-05-09 18:34:00 INFO  VaadinServletConfiguration:306 - Set servlet init parameter [productionMode] = [false]
+2019-05-09 18:34:00 INFO  VaadinServletConfiguration:306 - Set servlet init parameter [resourceCacheTime] = [3600]
+2019-05-09 18:34:00 INFO  VaadinServletConfiguration:306 - Set servlet init parameter [heartbeatInterval] = [300]
+2019-05-09 18:34:00 INFO  VaadinServletConfiguration:306 - Set servlet init parameter [closeIdleSessions] = [false]
+2019-05-09 18:34:00 INFO  FilterRegistrationBean:244 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-05-09 18:34:00 INFO  FilterRegistrationBean:244 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-05-09 18:34:00 INFO  FilterRegistrationBean:244 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-05-09 18:34:00 INFO  FilterRegistrationBean:244 - Mapping filter: 'requestContextFilter' to: [/*]
+2019-05-09 18:34:00 INFO  DelegatingFilterProxyRegistrationBean:244 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-05-09 18:34:00 INFO  ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2019-05-09 18:34:00 INFO  ServletRegistrationBean:185 - Servlet springVaadinServlet mapped to [/vaadinServlet/*, /VAADIN/*]
+2019-05-09 18:34:00 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2019-05-09 18:34:00 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2019-05-09 18:34:00 INFO  LocalContainerEntityManagerFactoryBean:361 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-05-09 18:34:00 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-05-09 18:34:00 INFO  Version:45 - HHH000412: Hibernate Core {5.2.16.Final}
+2019-05-09 18:34:00 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-05-09 18:34:00 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-05-09 18:34:01 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-05-09 18:34:01 INFO  LocalContainerEntityManagerFactoryBean:415 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-05-09 18:34:02 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-05-09 18:34:02 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/css/*'], []
+2019-05-09 18:34:02 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d246ea3, org.springframework.security.web.context.SecurityContextPersistenceFilter@4f6f416f, org.springframework.security.web.header.HeaderWriterFilter@6c0d7c83, org.springframework.security.web.authentication.logout.LogoutFilter@44c73c26, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@71e693fa, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3eb77ea8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@341814d3, org.springframework.security.web.session.SessionManagementFilter@5965be2d, org.springframework.security.web.access.ExceptionTranslationFilter@7d898981, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7c214cc0]
+2019-05-09 18:34:02 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-09 18:34:02 INFO  RequestMappingHandlerAdapter:574 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4fccd51b: startup date [Thu May 09 18:33:58 CEST 2019]; root of context hierarchy
+2019-05-09 18:34:02 WARN  JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration:235 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-05-09 18:34:02 INFO  RequestMappingHandlerMapping:547 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-05-09 18:34:02 INFO  RequestMappingHandlerMapping:547 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-05-09 18:34:02 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-09 18:34:02 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-09 18:34:03 INFO  VaadinServletConfiguration:121 - Checking the application context for Vaadin UI mappings
+2019-05-09 18:34:03 INFO  VaadinServletConfiguration:206 - Registering Vaadin servlet of type [com.vaadin.spring.server.SpringVaadinServlet]
+2019-05-09 18:34:03 INFO  VaadinServletConfiguration:110 - Forwarding @SpringUI URLs from {/main=org.springframework.web.servlet.mvc.ServletForwardingController@68b32e3e, /login=org.springframework.web.servlet.mvc.ServletForwardingController@68b32e3e, /main/=org.springframework.web.servlet.mvc.ServletForwardingController@68b32e3e, /login/=org.springframework.web.servlet.mvc.ServletForwardingController@68b32e3e}
+2019-05-09 18:34:03 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/main] onto handler of type [class org.springframework.web.servlet.mvc.ServletForwardingController]
+2019-05-09 18:34:03 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ServletForwardingController]
+2019-05-09 18:34:03 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/main/] onto handler of type [class org.springframework.web.servlet.mvc.ServletForwardingController]
+2019-05-09 18:34:03 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/login/] onto handler of type [class org.springframework.web.servlet.mvc.ServletForwardingController]
+2019-05-09 18:34:03 INFO  AnnotationMBeanExporter:433 - Registering beans for JMX exposure on startup
+2019-05-09 18:34:03 INFO  AnnotationMBeanExporter:895 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-05-09 18:34:03 INFO  AnnotationMBeanExporter:668 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-05-09 18:34:03 INFO  TomcatWebServer:206 - Tomcat started on port(s): 8444 (http) with context path ''
+2019-05-09 18:34:03 INFO  ApplicationLauncher:59 - Started ApplicationLauncher in 5.42 seconds (JVM running for 5.86)
+2019-05-09 18:51:57 INFO  ApplicationLauncher:50 - Starting ApplicationLauncher v0.0.1-SNAPSHOT on DESKTOP-Q486NGJ with PID 14372 (C:\Users\Gonda Gergely\git\documentManagement\runtime\document-management-web-0.0.1-SNAPSHOT.jar started by Gonda Gergely in c:\Users\Gonda Gergely\git\documentManagement\runtime)
+2019-05-09 18:51:57 INFO  ApplicationLauncher:659 - No active profile set, falling back to default profiles: default
+2019-05-09 18:51:57 INFO  AnnotationConfigServletWebServerApplicationContext:590 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@44e81672: startup date [Thu May 09 18:51:57 CEST 2019]; root of context hierarchy
+2019-05-09 18:51:58 WARN  ConfigurationClassPostProcessor:381 - Cannot enhance @Configuration bean definition 'com.vaadin.spring.VaadinConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2019-05-09 18:51:58 WARN  ConfigurationClassEnhancer:353 - @Bean method ApplicationUIModuleConfig.propertySourcesPlaceholderConfigurer is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2019-05-09 18:51:59 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$257b5d18] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:51:59 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$be292552] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:51:59 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:51:59 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@72057ecf' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:51:59 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$e2fdc804] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:51:59 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-09 18:51:59 INFO  TomcatWebServer:91 - Tomcat initialized with port(s): 8444 (http)
+2019-05-09 18:51:59 INFO  ContextLoader:285 - Root WebApplicationContext: initialization completed in 1792 ms
+2019-05-09 18:51:59 INFO  VaadinServletConfiguration:261 - Registering Vaadin servlet
+2019-05-09 18:51:59 INFO  VaadinServletConfiguration:263 - Servlet will be mapped to URLs [/vaadinServlet/*, /VAADIN/*]
+2019-05-09 18:51:59 INFO  VaadinServletConfiguration:282 - Setting servlet init parameters
+2019-05-09 18:51:59 INFO  VaadinServletConfiguration:306 - Set servlet init parameter [productionMode] = [false]
+2019-05-09 18:51:59 INFO  VaadinServletConfiguration:306 - Set servlet init parameter [resourceCacheTime] = [3600]
+2019-05-09 18:51:59 INFO  VaadinServletConfiguration:306 - Set servlet init parameter [heartbeatInterval] = [300]
+2019-05-09 18:51:59 INFO  VaadinServletConfiguration:306 - Set servlet init parameter [closeIdleSessions] = [false]
+2019-05-09 18:51:59 INFO  FilterRegistrationBean:244 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-05-09 18:51:59 INFO  FilterRegistrationBean:244 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-05-09 18:51:59 INFO  FilterRegistrationBean:244 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-05-09 18:51:59 INFO  FilterRegistrationBean:244 - Mapping filter: 'requestContextFilter' to: [/*]
+2019-05-09 18:51:59 INFO  DelegatingFilterProxyRegistrationBean:244 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-05-09 18:51:59 INFO  ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2019-05-09 18:51:59 INFO  ServletRegistrationBean:185 - Servlet springVaadinServlet mapped to [/vaadinServlet/*, /VAADIN/*]
+2019-05-09 18:52:00 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2019-05-09 18:52:00 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2019-05-09 18:52:00 INFO  LocalContainerEntityManagerFactoryBean:361 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-05-09 18:52:00 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-05-09 18:52:00 INFO  Version:45 - HHH000412: Hibernate Core {5.2.16.Final}
+2019-05-09 18:52:00 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-05-09 18:52:00 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-05-09 18:52:00 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-05-09 18:52:01 INFO  LocalContainerEntityManagerFactoryBean:415 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-05-09 18:52:01 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-05-09 18:52:02 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/css/*'], []
+2019-05-09 18:52:02 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@436c81a3, org.springframework.security.web.context.SecurityContextPersistenceFilter@48d61b48, org.springframework.security.web.header.HeaderWriterFilter@352c1b98, org.springframework.security.web.authentication.logout.LogoutFilter@3e74829, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@258d79be, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@176b75f7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3561c410, org.springframework.security.web.session.SessionManagementFilter@5a9f4771, org.springframework.security.web.access.ExceptionTranslationFilter@3370f42, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4e423aa2]
+2019-05-09 18:52:02 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-09 18:52:02 INFO  RequestMappingHandlerAdapter:574 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@44e81672: startup date [Thu May 09 18:51:57 CEST 2019]; root of context hierarchy
+2019-05-09 18:52:02 WARN  JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration:235 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-05-09 18:52:02 INFO  RequestMappingHandlerMapping:547 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-05-09 18:52:02 INFO  RequestMappingHandlerMapping:547 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-05-09 18:52:02 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-09 18:52:02 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-05-09 18:52:02 INFO  VaadinServletConfiguration:121 - Checking the application context for Vaadin UI mappings
+2019-05-09 18:52:02 INFO  VaadinServletConfiguration:206 - Registering Vaadin servlet of type [com.vaadin.spring.server.SpringVaadinServlet]
+2019-05-09 18:52:02 INFO  VaadinServletConfiguration:110 - Forwarding @SpringUI URLs from {/main=org.springframework.web.servlet.mvc.ServletForwardingController@2e1ef60, /login=org.springframework.web.servlet.mvc.ServletForwardingController@2e1ef60, /main/=org.springframework.web.servlet.mvc.ServletForwardingController@2e1ef60, /login/=org.springframework.web.servlet.mvc.ServletForwardingController@2e1ef60}
+2019-05-09 18:52:02 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/main] onto handler of type [class org.springframework.web.servlet.mvc.ServletForwardingController]
+2019-05-09 18:52:02 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ServletForwardingController]
+2019-05-09 18:52:02 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/main/] onto handler of type [class org.springframework.web.servlet.mvc.ServletForwardingController]
+2019-05-09 18:52:02 INFO  SimpleUrlHandlerMapping:373 - Mapped URL path [/login/] onto handler of type [class org.springframework.web.servlet.mvc.ServletForwardingController]
+2019-05-09 18:52:03 INFO  AnnotationMBeanExporter:433 - Registering beans for JMX exposure on startup
+2019-05-09 18:52:03 INFO  AnnotationMBeanExporter:895 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-05-09 18:52:03 INFO  AnnotationMBeanExporter:668 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-05-09 18:52:03 INFO  TomcatWebServer:206 - Tomcat started on port(s): 8444 (http) with context path ''
+2019-05-09 18:52:03 INFO  ApplicationLauncher:59 - Started ApplicationLauncher in 5.579 seconds (JVM running for 6.02)
+2019-05-09 18:52:06 INFO  AnnotationConfigServletWebServerApplicationContext:993 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@44e81672: startup date [Thu May 09 18:51:57 CEST 2019]; root of context hierarchy
+2019-05-09 18:52:06 INFO  AnnotationMBeanExporter:451 - Unregistering JMX-exposed beans on shutdown
+2019-05-09 18:52:06 INFO  AnnotationMBeanExporter:183 - Unregistering JMX-exposed beans
+2019-05-09 18:52:06 INFO  LocalContainerEntityManagerFactoryBean:597 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-05-09 18:52:06 INFO  HikariDataSource:381 - HikariPool-1 - Shutdown initiated...
+2019-05-09 18:52:06 INFO  HikariDataSource:383 - HikariPool-1 - Shutdown completed.
