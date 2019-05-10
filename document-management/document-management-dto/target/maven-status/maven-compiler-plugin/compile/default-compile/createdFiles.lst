@@ -1,0 +1,6 @@
+hu\due\document\management\dto\DocumentDTO.class
+hu\due\document\management\dto\LabelDTO.class
+hu\due\document\management\enums\AppRole.class
+hu\due\document\management\dto\BaseDTO.class
+hu\due\document\management\dto\UserDTO.class
+hu\due\document\management\dto\CustomePageDTO.class
